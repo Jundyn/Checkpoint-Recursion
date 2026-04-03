@@ -1,0 +1,21 @@
+function isPalindrome(word) {
+  // Base case: empty or single character
+  if (word.length <= 1) {
+    return true;
+  }
+
+  // Compare first and last characters
+  if (word[0] === word[word.length - 1]) {
+    // Recursive call on the remaining substring
+    return isPalindrome(word.slice(1, -1));
+  }
+
+  // If characters don't match
+  return false;
+}
+
+// Example usage
+console.log(isPalindrome("gag"));     // true
+console.log(isPalindrome("kayak"));   // true
+console.log(isPalindrome("radar"));   // true
+console.log(isPalindrome("hello"));   // false
